@@ -1,0 +1,76 @@
+<svg viewBox="0 0 420 760" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgRight" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F3ECDC"/>
+      <stop offset="100%" stop-color="#E7DCC4"/>
+    </linearGradient>
+    <linearGradient id="potRight" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#EFE3CC"/>
+      <stop offset="100%" stop-color="#DACBA8"/>
+    </linearGradient>
+    <linearGradient id="potRight2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#D98A56"/>
+      <stop offset="100%" stop-color="#B8663A"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="420" height="760" fill="url(#bgRight)"/>
+  <circle cx="90" cy="150" r="150" fill="#F8EFD9" opacity="0.5"/>
+
+  <!-- prateleira -->
+  <rect x="0" y="560" width="420" height="26" fill="#A97A4E"/>
+  <rect x="0" y="586" width="420" height="8" fill="#8A6038"/>
+  <rect x="0" y="594" width="420" height="166" fill="#F0E7D3"/>
+
+  <!-- vaso alto com ramos -->
+  <g>
+    <path d="M60,560 L72,440 L128,440 L140,560 Z" fill="url(#potRight)"/>
+    <ellipse cx="100" cy="440" rx="30" ry="8" fill="#C9BB98"/>
+    <g stroke="#6E8C58" stroke-width="5" fill="none" stroke-linecap="round">
+      <path d="M100,440 Q90,360 70,300"/>
+      <path d="M100,440 Q100,340 100,260"/>
+      <path d="M100,440 Q112,360 130,300"/>
+    </g>
+    <g fill="#7FA366">
+      <ellipse cx="70" cy="300" rx="10" ry="22" transform="rotate(-20 70 300)"/>
+      <ellipse cx="100" cy="258" rx="10" ry="24" transform="rotate(0 100 258)"/>
+      <ellipse cx="130" cy="300" rx="10" ry="22" transform="rotate(20 130 300)"/>
+    </g>
+  </g>
+
+  <!-- vaso de barro pintado com folhagem cheia -->
+  <g>
+    <path d="M200,560 L216,455 L300,455 L316,560 Z" fill="url(#potRight2)"/>
+    <ellipse cx="258" cy="455" rx="42" ry="10" fill="#9C5A34"/>
+    <!-- padrão pintado -->
+    <g stroke="#F3ECDC" stroke-width="3" fill="none" opacity="0.8">
+      <path d="M220,530 q19,-14 38,0 q19,14 38,0"/>
+      <path d="M222,500 q18,-12 36,0 q18,12 36,0"/>
+    </g>
+    <!-- folhagem -->
+    <g stroke="#5E7A4C" stroke-width="6" fill="none" stroke-linecap="round">
+      <path d="M258,455 Q225,370 210,290"/>
+      <path d="M258,455 Q250,350 258,250"/>
+      <path d="M258,455 Q280,360 300,280"/>
+      <path d="M258,455 Q300,390 320,340"/>
+      <path d="M258,455 Q220,400 195,350"/>
+    </g>
+    <g fill="#6E8C58">
+      <ellipse cx="210" cy="288" rx="15" ry="34" transform="rotate(-22 210 288)"/>
+      <ellipse cx="258" cy="248" rx="16" ry="36" transform="rotate(0 258 248)"/>
+      <ellipse cx="300" cy="278" rx="15" ry="34" transform="rotate(24 300 278)"/>
+      <ellipse cx="320" cy="338" rx="13" ry="26" transform="rotate(45 320 338)"/>
+      <ellipse cx="195" cy="348" rx="13" ry="26" transform="rotate(-45 195 348)"/>
+    </g>
+  </g>
+
+  <!-- vasinho pequeno -->
+  <g>
+    <path d="M345,560 L353,520 L387,520 L395,560 Z" fill="url(#potRight)"/>
+    <ellipse cx="370" cy="520" rx="17" ry="6" fill="#C9BB98"/>
+    <g fill="#7C9C68">
+      <path d="M370,520 Q358,495 362,472 Q371,496 370,520 Z"/>
+      <path d="M370,520 Q382,495 379,470 Q371,496 370,520 Z"/>
+    </g>
+  </g>
+</svg>

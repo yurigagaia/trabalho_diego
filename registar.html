@@ -1,0 +1,66 @@
+ <!-- Coluna de cadastro -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style_registrar.css">
+    <title>Document</title>
+ </head>
+ <body>
+    
+ </body>
+ </html>
+ 
+ 
+ <section class="auth-card">
+      <div class="auth-icon">👤➕</div>
+      <h1>Crie sua conta</h1>
+      <p class="subtitle">Junte-se à vitrine compartilhada de artesãos</p>
+
+      <form class="auth-form" id="register-form">
+        <label for="reg-nome">Nome completo</label>
+        <div class="input-group">
+          <input type="text" id="reg-nome" placeholder="Seu nome completo" required>
+          <span class="input-icon">👤</span>
+        </div>
+
+        <label for="reg-email">E-mail</label>
+        <div class="input-group">
+          <input type="email" id="reg-email" placeholder="seu@email.com" required>
+          <span class="input-icon">✉️</span>
+        </div>
+
+        <label for="reg-user">Nome de usuário</label>
+        <div class="input-group">
+          <input type="text" id="reg-user" placeholder="@seuduusuario" required>
+          <span class="input-icon">@</span>
+        </div>
+
+        <label for="reg-senha">Senha</label>
+        <div class="input-group">
+          <input type="password" id="reg-senha" placeholder="••••••••" required>
+          <span class="input-icon">🔒</span>
+        </div>
+
+        <label for="reg-senha2">Confirmar senha</label>
+        <div class="input-group">
+          <input type="password" id="reg-senha2" placeholder="••••••••" required>
+          <span class="input-icon">🔒</span>
+        </div>
+
+        <label class="checkbox">
+          <input type="checkbox" required>
+          Li e concordo com os <a href="#" class="link-accent">Termos de Uso</a> e
+          <a href="#" class="link-accent">Política de Privacidade</a>
+        </label>
+
+        <button type="submit" class="btn-primary">Criar conta</button>
+
+        <p class="switch-text">
+          Já tem uma conta?
+          <a href="#" class="link-accent" data-switch>Fazer login</a>
+        </p>
+      </form>
+    </section>
