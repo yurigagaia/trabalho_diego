@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>artes nossas - Painel de Controle</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <!-- Feather / Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+
+<body>
+
+  <div class="app-container">
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <a href="../index.html" class="brand-logo">
+        <div class="brand-logo-icon">🌱</div>
+        <div class="brand-title">artes<br>nossas</div>
+      </a>
+
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a class="nav-link active" data-view="visao-geral" onclick="switchView('visao-geral')">
+            <i data-lucide="layout-dashboard"></i>
+            <span>Visão geral</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-view="produtos" onclick="switchView('produtos')">
+            <i data-lucide="package"></i>
+            <span>Meus produtos</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-view="pedidos" onclick="switchView('pedidos')">
+            <i data-lucide="shopping-bag"></i>
+            <span>Pedidos</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-view="vendas" onclick="switchView('vendas')">
+            <i data-lucide="trending-up"></i>
+            <span>Vendas</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-view="artesaos" onclick="switchView('artesaos')">
+            <i data-lucide="users"></i><span>Artesãos</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-view="minha-loja" onclick="switchView('minha-loja')">
+            <i data-lucide="store"></i>
+            <span>Minha loja</span>
+          </a>
+        </li>
+
+        <li class="nav-divider"></li>
+
+        <li class="nav-item">
+          <a class="nav-link" onclick="showToast('Configurações acessadas', 'info')">
+            <i data-lucide="settings"></i>
+            <span>Configurações</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="login.html">
+            <i data-lucide="log-out"></i>
+            <span>Sair</span>
+          </a>
+        </li>
+      </ul>
+
+      <!-- Sidebar Help Widget -->
+      <div class="sidebar-help-card">
+        <div class="help-icon-wrapper">🪴</div>
+        <div class="help-title">Precisa de ajuda?</div>
+        <div class="help-desc">Acesse nossa central de ajuda para tirar dúvidas.</div>
+        <button class="btn-help" onclick="showToast('Central de Ajuda aberta', 'info')">Ver ajuda</button>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-wrapper">
+
+      <!-- Top Navbar Header -->
+      <header class="top-header">
+        <div class="page-header-info">
+          <h1 id="header-title">Olá, Maria! 👋</h1>
+          <p id="header-subtitle">Aqui está um resumo da sua loja.</p>
+        </div>
+
+        <div class="header-user-actions">
+          <button class="icon-btn-notifications" id="notification-button" title="Notificações"
+            onclick="toggleNotifications()">
+            <i data-lucide="bell"></i>
+            <span class="notification-dot" id="notification-dot"></span>
+            <span class="notification-count" id="notification-count">0</span>
+          </button>
+          <div class="notifications-panel" id="notifications-panel">
+            <div class="notifications-header"><strong>Notificações</strong><button type="button"
+                onclick="markAllNotificationsRead()">Marcar como lidas</button></div>
+            <div id="notifications-list" class="notifications-list"></div>
+          </div>
+
+          <div class="user-profile-badge">
+            <img src="../assets/maria.png" alt="Maria Artesã" class="user-avatar-small" id="header-avatar">
+            <div class="user-name-wrapper">
+              <span class="user-name" id="header-user-name">Maria Artesã</span>
+              <span class="store-link-sub" onclick="switchView('minha-loja')">Ver minha loja</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- ========================================== -->
+      <!-- VIEW 1: VISÃO GERAL                        -->
+      <!-- ========================================== -->
+      <section id="view-visao-geral" class="view-section active">
+
+        <!-- Metrics Grid -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-card-top">
+              <div class="stat-icon green"><i data-lucide="dollar-sign"></i></div>
+              <div class="stat-title">Vendas este mês</div>
+            </div>
+            <div class="stat-value">R$ 1.280,00</div>
+            <div class="stat-footer">
+              <span class="stat-trend">↑ 18%</span>
+              <span style="color: var(--text-muted);">em relação ao mês passado</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-card-top">
+              <div class="stat-icon orange"><i data-lucide="shopping-cart"></i></div>
+              <div class="stat-title">Pedidos novos</div>
+            </div>
+            <div class="stat-value">12</div>
+            <div class="stat-footer">
+              <a class="stat-link" onclick="switchView('pedidos')">Ver pedidos</a>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-card-top">
+              <div class="stat-icon emerald"><i data-lucide="package"></i></div>
+              <div class="stat-title">Produtos publicados</div>
+            </div>
+            <div class="stat-value">18</div>
+            <div class="stat-footer">
+              <a class="stat-link" onclick="switchView('produtos')">Ver produtos</a>
+            </div>
+          </div>
+
+          <div class="stat-card stat-card-clickable" role="button" tabindex="0" onclick="showLowStockProducts()" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); showLowStockProducts(); }" aria-label="Ver produtos com estoque acabando">
+            <div class="stat-card-top">
+              <div class="stat-icon amber"><i data-lucide="alert-triangle"></i></div>
+              <div class="stat-title">Produtos acabando</div>
+            </div>
+            <div class="stat-value">3</div>
+            <div class="stat-footer">
+              <a class="stat-link" onclick="switchView('produtos')">Ver produtos</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Orders Table Card -->
+        <div class="card table-card">
+          <div class="card-header-row">
+            <h3 class="card-title">Pedidos recentes</h3>
+            <a class="link-action" onclick="switchView('pedidos')">Ver todos</a>
+          </div>
+
+          <table class="custom-table">
+            <thead>
+              <tr>
+                <th>Pedido</th>
+                <th>Cliente</th>
+                <th>Itens</th>
+                <th>Valor Total</th>
+                <th>Status</th>
+                <th>Data</th>
+              </tr>
+            </thead>
+            <tbody id="recent-orders-tbody">
+              <!-- Rendered dynamically by JS -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Quick Actions Card -->
+        <div class="card quick-actions-card">
+          <h3>Ações rápidas</h3>
+          <button class="btn-primary" onclick="openAddProductModal()">
+            <i data-lucide="plus"></i> Adicionar produto
+          </button>
+          <button class="btn-outline" onclick="switchView('pedidos')">Ver pedidos</button>
+          <button class="btn-outline" onclick="switchView('vendas')">Ver minhas vendas</button>
+        </div>
+
+      </section>
+
+      <!-- ========================================== -->
+      <!-- VIEW 2: MEUS PRODUTOS                      -->
+      <!-- ========================================== -->
+      <section id="view-produtos" class="view-section">
+
+        <div class="actions-filter-row">
+          <div class="search-filter-group">
+            <div class="search-input-wrapper">
+              <i data-lucide="search"></i>
+              <input type="text" id="search-products-input" class="search-input" placeholder="Buscar produto..."
+                oninput="filterProducts()">
+            </div>
+            <select id="category-filter-select" class="select-filter" onchange="filterProducts()">
+              <option value="todas">Todas as categorias</option>
+              <option value="Cerâmica">Cerâmica</option>
+              <option value="Decoração">Decoração</option>
+              <option value="Acessórios">Acessórios</option>
+            </select>
+          </div>
+
+          <button class="btn-primary" onclick="openAddProductModal()">
+            <i data-lucide="plus"></i> Adicionar produto
+          </button>
+        </div>
+
+        <div class="card table-card">
+          <table class="custom-table">
+            <thead>
+              <tr>
+                <th>Produto</th>
+                <th>Preço</th>
+                <th>Estoque</th>
+                <th>Artesão</th>
+                <th>Status</th>
+                <th style="text-align: right;">Ações</th>
+              </tr>
+            </thead>
+            <tbody id="products-tbody">
+              <!-- Rendered dynamically by JS -->
+            </tbody>
+          </table>
+
+          <!-- Pagination -->
+          <div class="pagination-wrapper">
+            <button class="pagination-btn" disabled>Anterior</button>
+            <button class="pagination-btn active">1</button>
+            <button class="pagination-btn">2</button>
+            <button class="pagination-btn">3</button>
+            <span style="color: var(--text-muted); font-size: 0.8rem;">...</span>
+            <button class="pagination-btn">4</button>
+            <button class="pagination-btn">Próxima</button>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ========================================== -->
+      <!-- VIEW 3: PEDIDOS                            -->
+      <!-- ========================================== -->
+      <section id="view-pedidos" class="view-section">
+
+        <div class="orders-filter-bar">
+          <div class="filter-tabs">
+            <button class="tab-btn active" onclick="filterOrdersTab(this, 'todos')">Todos</button>
+            <button class="tab-btn" onclick="filterOrdersTab(this, 'novos')">Novos</button>
+            <button class="tab-btn" onclick="filterOrdersTab(this, 'em-producao')">Em produção</button>
+            <button class="tab-btn" onclick="filterOrdersTab(this, 'enviado')">Enviados</button>
+            <button class="tab-btn" onclick="filterOrdersTab(this, 'concluido')">Concluídos</button>
+          </div>
+
+          <select class="select-filter" id="sort-orders-select" onchange="renderOrdersList()">
+            <option value="recentes">Mais recentes</option>
+            <option value="maior-valor">Maior valor</option>
+            <option value="menor-valor">Menor valor</option>
+          </select>
+        </div>
+
+        <div class="orders-list-grid" id="orders-list-container">
+          <!-- Rendered dynamically by JS -->
+        </div>
+
+      </section>
+
+      <!-- ========================================== -->
+      <!-- VIEW 4: MINHA LOJA (PERFIL DA LOJA)        -->
+      <!-- ========================================== -->
+      <section id="view-minha-loja" class="view-section">
+
+        <div class="store-profile-grid">
+
+          <!-- Left Edit Form -->
+          <div class="card">
+            <h3 class="card-title" style="margin-bottom: 20px;">Informações da loja</h3>
+
+            <div class="store-photo-upload">
+              <div class="avatar-upload-wrapper">
+                <img src="../assets/maria.png" id="form-avatar-img" class="avatar-upload-img" alt="Foto da Loja">
+                <label for="input-avatar-file" class="btn-upload-camera" title="Alterar foto">
+                  <i data-lucide="camera" style="width:16px; height:16px;"></i>
+                </label>
+                <input type="file" id="input-avatar-file" accept="image/*" style="display:none;"
+                  onchange="handleAvatarChange(this)">
+              </div>
+              <div>
+                <span class="form-label" style="margin-bottom: 2px;">Foto da loja</span>
+                <span style="font-size: 0.78rem; color: var(--text-muted);">Recomendado: imagem quadrada de alta
+                  qualidade</span>
+              </div>
+            </div>
+
+            <form id="store-profile-form" onsubmit="saveStoreProfile(event)">
+              <div class="form-group">
+                <label class="form-label">Nome da loja</label>
+                <input type="text" id="input-store-name" class="form-input" value="Maria Artesã"
+                  oninput="syncLivePreview()">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Sobre você</label>
+                <textarea id="input-store-bio" rows="4" class="form-textarea"
+                  oninput="syncLivePreview()">Sou artesã apaixonada pelo que faço. Trabalho com cerâmica e peças decorativas feitas à mão com muito amor e dedicação.</textarea>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Localização</label>
+                <input type="text" id="input-store-location" class="form-input" value="Linhares - ES"
+                  oninput="syncLivePreview()">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Especialidade</label>
+                <input type="text" id="input-store-specialty" class="form-input" value="Cerâmica"
+                  oninput="syncLivePreview()">
+              </div>
+
+              <button type="submit" class="btn-primary" style="margin-top: 10px;">
+                Salvar alterações
+              </button>
+            </form>
+          </div>
+
+          <!-- Right Live Preview Card -->
+          <div class="live-preview-container">
+            <div class="preview-title">Como sua loja aparece para os clientes</div>
+
+            <div class="store-preview-card">
+              <div class="preview-banner-wrapper">
+                <img src="../assets/banner.png" class="preview-banner-img" alt="Banner da Loja">
+              </div>
+
+              <div class="preview-content">
+                <img src="../assets/maria.png" id="preview-avatar" class="preview-avatar-floating" alt="Avatar da Loja">
+                <h3 class="preview-store-name" id="preview-name">Maria Artesã</h3>
+                <p class="preview-store-specialty" id="preview-specialty">Cerâmica artesanal</p>
+
+                <div class="preview-location-badge">
+                  <i data-lucide="map-pin" style="width:14px; height:14px;"></i>
+                  <span id="preview-location">Linhares - ES</span>
+                </div>
+
+                <p class="preview-bio-quote" id="preview-bio">
+                  "Peças feitas à mão com amor e dedicação para transformar seu ambiente."
+                </p>
+
+                <button class="btn-primary" style="width: 100%; justify-content: center;"
+                  onclick="window.location.href='vitrine.html'">
+                  Ver minha loja na Vitrine
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- ========================================== -->
+      <!-- VIEW 5: VENDAS                             -->
+      <!-- ========================================== -->
+      <section id="view-vendas" class="view-section">
+
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 20px;">
+          <select class="select-filter">
+            <option>01/05/2024 - 31/05/2024</option>
+            <option>Últimos 30 dias</option>
+            <option>Este ano</option>
+          </select>
+        </div>
+
+        <!-- 4 Metric Cards -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-title">Faturamento total</div>
+            <div class="stat-value">R$ 1.280,00</div>
+            <div class="stat-footer">
+              <span class="stat-trend">↑ 18%</span>
+              <span style="color: var(--text-muted);">em relação ao período anterior</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-title">Pedidos realizados</div>
+            <div class="stat-value">24</div>
+            <div class="stat-footer">
+              <span class="stat-trend">↑ 14%</span>
+              <span style="color: var(--text-muted);">em relação ao período anterior</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-title">Ticket médio</div>
+            <div class="stat-value">R$ 53,33</div>
+            <div class="stat-footer">
+              <span class="stat-trend">↑ 8%</span>
+              <span style="color: var(--text-muted);">em relação ao período anterior</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-title">Produtos vendidos</div>
+            <div class="stat-value">36</div>
+            <div class="stat-footer">
+              <span class="stat-trend">↑ 21%</span>
+              <span style="color: var(--text-muted);">em relação ao período anterior</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chart & Best Sellers Section -->
+        <div class="vendas-chart-section">
+
+          <div class="card chart-card">
+            <h3 class="card-title">Faturamento ao longo do período</h3>
+            <div class="chart-container-inner">
+              <canvas id="salesChart"></canvas>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3 class="card-title" style="margin-bottom: 20px;">Produtos mais vendidos</h3>
+
+            <div class="top-sellers-list">
+              <div class="top-seller-item">
+                <div class="top-seller-product">
+                  <img src="../assets/caneca.png" class="top-seller-thumb" alt="Caneca">
+                  <span class="top-seller-name">Caneca Cerâmica</span>
+                </div>
+                <span class="top-seller-count">12 unidades</span>
+              </div>
+
+              <div class="top-seller-item">
+                <div class="top-seller-product">
+                  <img src="../assets/cesto.png" class="top-seller-thumb" alt="Cesto">
+                  <span class="top-seller-name">Cesto de Fibra Natural</span>
+                </div>
+                <span class="top-seller-count">9 unidades</span>
+              </div>
+
+              <div class="top-seller-item">
+                <div class="top-seller-product">
+                  <img src="../assets/colar.png" class="top-seller-thumb" alt="Colar">
+                  <span class="top-seller-name">Colar de Madeira</span>
+                </div>
+                <span class="top-seller-count">6 unidades</span>
+              </div>
+
+              <div class="top-seller-item">
+                <div class="top-seller-product">
+                  <img src="../assets/macrame.png" class="top-seller-thumb" alt="Painel">
+                  <span class="top-seller-name">Painel de Macramê</span>
+                </div>
+                <span class="top-seller-count">5 unidades</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+      <section id="view-artesaos" class="view-section">
+        <div class="actions-filter-row">
+          <div class="search-input-wrapper"><i data-lucide="search"></i><input type="text" id="search-artisans-input"
+              class="search-input" placeholder="Pesquisar por nome, e-mail ou cargo..." oninput="renderArtisans()">
+          </div>
+          <button class="btn-primary" onclick="openArtisanModal()"><i data-lucide="user-plus"></i> Adicionar
+            artesão</button>
+        </div>
+        <div class="card table-card">
+          <table class="custom-table">
+            <thead>
+              <tr>
+                <th>Artesão</th>
+                <th>Contato</th>
+                <th>Cargo</th>
+                <th>Cadastro</th> 
+                <th style="text-align:right">Ações</th>
+              </tr>
+            </thead>
+            <tbody id="artisans-tbody"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- MODALS & DIALOGS                           -->
+  <!-- ========================================== -->
+
+  <!-- Add / Edit Product Modal -->
+  <div class="modal-backdrop" id="modal-product">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modal-product-title">Adicionar produto</h3>
+        <button class="btn-close-modal" onclick="closeProductModal()">&times;</button>
+      </div>
+
+      <form id="product-form" onsubmit="saveProduct(event)">
+        <input type="hidden" id="prod-form-id">
+
+        <div class="form-group">
+          <label class="form-label">Nome do produto</label>
+          <input type="text" id="prod-form-name" class="form-input" required placeholder="Ex: Vase Terracota">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Categoria</label>
+          <select id="prod-form-category" class="form-input" required>
+            <option value="Cerâmica">Cerâmica</option>
+            <option value="Decoração">Decoração</option>
+            <option value="Acessórios">Acessórios</option>
+          </select>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+          <div class="form-group">
+            <label class="form-label">Preço (R$)</label>
+            <input type="number" step="0.01" id="prod-form-price" class="form-input" required placeholder="69.90">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Estoque</label>
+            <input type="number" id="prod-form-stock" class="form-input" required placeholder="10">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">URL da Imagem ou Selecione</label>
+          <select id="prod-form-image-library" class="form-input" onchange="selectLibraryImage(this.value)">
+            <option value="../assets/caneca.png">Caneca Cerâmica</option>
+            <option value="../assets/cesto.png">Cesto de Fibra</option>
+            <option value="../assets/colar.png">Colar de Madeira</option>
+            <option value="../assets/macrame.png">Painel de Macramê</option>
+            <option value="../assets/bolsa.png">Bolsa de Palha</option>
+          </select>
+          <div class="product-image-upload">
+            <img id="prod-image-preview" src="../assets/caneca.png" alt="Prévia da imagem">
+            <div><label for="prod-form-image" class="btn-outline"><i data-lucide="upload"></i> Fazer
+                upload</label><input type="file" id="prod-form-image" accept="image/png,image/jpeg,image/webp" hidden
+                onchange="previewProductImage(this)"><small>PNG, JPG ou WebP (máx. 2 MB)</small></div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Artesão responsável</label>
+          <input type="text" id="artisan-product-search" class="form-input" placeholder="Pesquisar artesão..."
+            oninput="filterArtisanOptions()">
+          <select id="prod-form-artisan" class="form-input" required></select>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn-outline" onclick="closeProductModal()">Cancelar</button>
+          <button type="submit" class="btn-primary">Salvar produto</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Order Details Modal -->
+  <div class="modal-backdrop" id="modal-artisan">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modal-artisan-title">Adicionar artesão</h3><button class="btn-close-modal"
+          onclick="closeArtisanModal()">&times;</button>
+      </div>
+      <form id="artisan-form" onsubmit="saveArtisan(event)">
+        <input type="hidden" id="artisan-form-id">
+        <div class="form-group"><label class="form-label">Nome completo</label><input class="form-input"
+            id="artisan-form-name" required></div>
+        <div class="form-group"><label class="form-label">E-mail</label><input type="email" class="form-input"
+            id="artisan-form-email" required></div>
+        <div class="form-group"><label class="form-label">Telefone</label><input class="form-input"
+            id="artisan-form-phone" placeholder="(27) 99999-9999"></div>
+        <div class="form-group"><label class="form-label">Cargo</label><select class="form-input"
+            id="artisan-form-role">
+            <option>Artesão</option>
+            <option>Artesão líder</option>
+            <option>Auxiliar de artesão</option>
+            <option>Administrador</option>
+            <option>Gerente da loja</option>
+            <option>Gestor de vendas</option>
+            <option>Atendente</option>
+            <option>Editor de produtos</option>
+            <option>Fotógrafo de produtos</option>
+            <option>Responsável pelo estoque</option>
+            <option>Responsável pelos pedidos</option>
+            <option>Financeiro</option>
+            <option>Marketing</option>
+          </select></div>
+        <div class="form-group"><label class="form-label">Funcionalidades liberadas</label>
+          <div class="permissions-grid"><label><input type="checkbox" value="produtos"> Produtos</label><label><input
+                type="checkbox" value="pedidos"> Pedidos</label><label><input type="checkbox" value="vendas">
+              Vendas</label><label><input type="checkbox" value="artesaos"> Artesãos</label></div>
+        </div>
+        <div class="modal-footer"><button type="button" class="btn-outline"
+            onclick="closeArtisanModal()">Cancelar</button><button type="submit" class="btn-primary">Salvar e
+            convidar</button></div>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="modal-order">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modal-order-title">Detalhes do Pedido</h3>
+        <button class="btn-close-modal" onclick="closeOrderModal()">&times;</button>
+      </div>
+
+      <div id="modal-order-body">
+        <!-- Rendered dynamically -->
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn-primary" onclick="closeOrderModal()">Fechar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Chart.js Library -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Application JS -->
+  <script src="../js/dashboard.js"></script>
+</body>
+
+</html>

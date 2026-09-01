@@ -7,7 +7,7 @@ document.querySelectorAll('[data-switch]').forEach((link) => {
   });
 });
 
-// Exemplo simples de validação de senha no cadastro
+// Validação e redirecionamento de cadastro para o Painel do Artesão
 const registerForm = document.getElementById('register-form');
 if (registerForm) {
   registerForm.addEventListener('submit', (event) => {
@@ -20,15 +20,17 @@ if (registerForm) {
       return;
     }
 
-    alert('Conta criada com sucesso! (exemplo — conecte a um backend para salvar de verdade)');
-    registerForm.reset();
+    alert('Conta de artesão criada com sucesso! Redirecionando para o seu Painel...');
+    window.location.href = 'dashboard.html';
   });
 }
 
+// Redirecionamento de login para o Painel do Artesão
 const loginForm = document.getElementById('login-form');
 if (loginForm) {
   loginForm.addEventListener('submit', (event) => {
     event.preventDefault();
-    alert('Login enviado! (exemplo — conecte a um backend para autenticar de verdade)');
+    alert('Login realizado! Redirecionando para o seu Painel de Artesão...');
+    window.location.href = 'dashboard.html';
   });
 }
