@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Finalizar pedido — Artes Nossas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/checkout.css"><link rel="stylesheet" href="../css/branding.css"><link rel="stylesheet" href="../css/pix-modal.css">
+<script src="https://unpkg.com/lucide@latest" defer>
+</script>
+<script src="../js/checkout.js" defer>
+</script>
+</head>
+<body>
+<header>
+<a href="../index.html" class="brand brand-image">
+<img src="../assets/branding/logo_header.png" alt="Artes Nossas">
+</a>
+<div class="steps">
+<b>01 Carrinho</b>
+<i>
+</i>
+<b>02 Entrega</b>
+<i>
+</i>
+<b>03 Pagamento</b>
+</div>
+<a href="../index.html#vitrine" class="back">
+<i data-lucide="arrow-left">
+</i> Continuar comprando</a>
+</header>
+<main>
+<section class="checkout">
+<p class="eyebrow">Finalizar pedido</p>
+<h1>Seu feito à mão,<br>
+<em>a caminho de casa.</em>
+</h1>
+<form id="checkout-form">
+<fieldset>
+<legend>
+<span>01</span> Seus dados</legend>
+<div class="fields">
+<label class="wide">Nome completo<input required autocomplete="name" placeholder="Como podemos chamar você?">
+</label>
+<label>E-mail<input required type="email" autocomplete="email" placeholder="voce@email.com">
+</label>
+<label>WhatsApp<input required type="tel" autocomplete="tel" placeholder="(27) 99999-9999">
+</label>
+</div>
+</fieldset>
+<fieldset>
+<legend>
+<span>02</span> Onde entregar</legend>
+<div class="fields">
+<label>CEP<input required id="cep" inputmode="numeric" maxlength="9" placeholder="00000-000">
+</label>
+<label class="grow">Endereço<input required autocomplete="street-address" placeholder="Rua, avenida...">
+</label>
+<label>Número<input required placeholder="123">
+</label>
+<label>Complemento<input placeholder="Apto, bloco...">
+</label>
+<label>Bairro<input required>
+</label>
+<label>Cidade<input required value="Vitória">
+</label>
+<label>Estado<select required>
+<option>ES</option>
+</select>
+</label>
+</div>
+</fieldset>
+<fieldset>
+<legend>
+<span>03</span> Pagamento</legend>
+<div class="payments">
+<label>
+<input type="radio" name="payment" value="pix" checked>
+<i data-lucide="qr-code">
+</i>
+<span>
+<b>Pix</b>
+<small>Aprovação imediata</small>
+</span>
+</label>
+<label>
+<input type="radio" name="payment" value="card">
+<i data-lucide="credit-card">
+</i>
+<span>
+<b>Cartão</b>
+<small>Até 3x sem juros</small>
+</span>
+</label>
+</div>
+<div class="pix-info">
+<i data-lucide="shield-check">
+</i>
+<p>O código Pix será exibido depois da confirmação. Ambiente seguro e protegido.</p>
+</div>
+</fieldset>
+<button class="finish" type="submit">Confirmar pedido <i data-lucide="arrow-right">
+</i>
+</button>
+</form>
+</section>
+<aside>
+<div class="summary-head">
+<p>Resumo do pedido</p>
+<span id="item-count">0 itens</span>
+</div>
+<div id="cart-items">
+</div>
+<div id="empty-cart" class="empty" hidden>
+<i data-lucide="shopping-bag">
+</i>
+<p>Seu carrinho está vazio.</p>
+<a href="../index.html#vitrine">Escolher peças</a>
+</div>
+<div class="delivery">
+<i data-lucide="truck">
+</i>
+<div>
+<b>Entrega artesanal</b>
+<small>Prazo combinado com cada artesão</small>
+</div>
+<strong>R$ 18,00</strong>
+</div>
+<div class="totals">
+<p>
+<span>Subtotal</span>
+<b id="subtotal">R$ 0,00</b>
+</p>
+<p>
+<span>Entrega</span>
+<b id="shipping">R$ 0,00</b>
+</p>
+<p class="total">
+<span>Total</span>
+<b id="total">R$ 0,00</b>
+</p>
+</div>
+<p class="secure">
+<i data-lucide="lock-keyhole">
+</i> Compra segura e contato direto com quem fez</p>
+</aside>
+</main>
+<div class="success" id="success" hidden>
+<div>
+<span>
+<i data-lucide="check">
+</i>
+</span>
+<p>Pedido confirmado</p>
+<h2>Obrigada por valorizar<br>quem faz daqui.</h2>
+<small id="order-code">
+</small>
+<a href="../index.html">Voltar para a Artes Nossas</a>
+</div>
+</div>
+<div class="pix-modal" id="pix-modal" hidden role="dialog" aria-modal="true" aria-labelledby="pix-title">
+<div class="pix-card"><button class="pix-close" type="button" aria-label="Fechar"><i data-lucide="x"></i></button><div class="pix-top"><span><i data-lucide="qr-code"></i></span><div><small>Pagamento instantâneo</small><h2 id="pix-title">Pague com Pix</h2></div></div><p class="pix-instruction">Abra o aplicativo do seu banco e escaneie o código abaixo.</p><div class="qr-wrap"><img src="../assets/pagamento/qr-pix-demo.png" alt="QR Code demonstrativo para pagamento Pix"><span>QR demonstrativo</span></div><div class="pix-value"><span>Valor do pedido</span><strong id="pix-total">R$ 0,00</strong></div><div class="pix-copy"><code id="pix-code">00020126ARTESNOSSAS-PIX-DEMONSTRACAO-123456</code><button type="button" id="copy-pix"><i data-lucide="copy"></i><span>Copiar</span></button></div><div class="pix-timer"><i data-lucide="clock-3"></i> Este código expira em <b id="pix-timer">10:00</b></div><button class="pix-confirm" type="button" id="pix-confirm">Já fiz o pagamento <i data-lucide="arrow-right"></i></button><p class="pix-note"><i data-lucide="shield-check"></i> Ambiente demonstrativo — nenhuma cobrança real será feita.</p></div>
+</div>
+</body>
+</html>

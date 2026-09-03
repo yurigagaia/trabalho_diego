@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Crie sua conta de artesão na Arte Nossa.">
+<title>Criar conta — Arte Nossa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/auth.css"><link rel="stylesheet" href="../css/branding.css">
+<script src="https://unpkg.com/lucide@latest" defer>
+</script>
+<script src="../js/auth.js" defer>
+</script>
+</head>
+<body>
+<header>
+<a class="brand brand-image" href="../index.html"><img src="../assets/branding/logo_header.png" alt="Artes Nossas">
+<span>⌁</span>
+<div>
+<strong>arte nossa</strong>
+<small>feito no Espírito Santo</small>
+</div>
+</a>
+<nav>
+<a href="../index.html">Início</a>
+<a href="../index.html#artesaos">Artesãos</a>
+<a href="../index.html#vitrine">Coleções</a>
+<a href="../index.html#historia">Sobre nós</a>
+</nav>
+<a class="header-btn filled" href="login.html">Entrar</a>
+</header>
+<main class="auth-shell register">
+<section class="auth-content">
+<a class="back" href="../index.html">
+<i data-lucide="arrow-left">
+</i> Voltar à vitrine</a>
+<p class="eyebrow">Comece sua história</p>
+<h1>Crie sua<br>
+<em>conta.</em>
+</h1>
+<p class="subtitle">Junte-se à vitrine compartilhada que valoriza quem cria com as mãos.</p>
+<form id="register-form" novalidate>
+<div class="two">
+<label>Nome completo<div class="field">
+<i data-lucide="user">
+</i>
+<input id="reg-nome" autocomplete="name" required placeholder="Seu nome completo">
+</div>
+</label>
+<label>Nome de usuário<div class="field">
+<i data-lucide="at-sign">
+</i>
+<input id="reg-user" autocomplete="username" required placeholder="seuusuario">
+</div>
+</label>
+</div>
+<label>E-mail<div class="field">
+<i data-lucide="mail">
+</i>
+<input id="reg-email" type="email" autocomplete="email" required placeholder="seu@email.com">
+</div>
+</label>
+<div class="two">
+<label>Senha<div class="field">
+<i data-lucide="lock-keyhole">
+</i>
+<input id="reg-senha" type="password" autocomplete="new-password" required minlength="6" placeholder="Mínimo de 6 caracteres">
+<button class="toggle-password" type="button" aria-label="Mostrar senha">
+<i data-lucide="eye">
+</i>
+</button>
+</div>
+</label>
+<label>Confirmar senha<div class="field">
+<i data-lucide="lock-keyhole">
+</i>
+<input id="reg-senha2" type="password" autocomplete="new-password" required minlength="6" placeholder="Repita a senha">
+</div>
+</label>
+</div>
+<label class="check terms">
+<input type="checkbox" id="terms" required> Li e concordo com os <a href="#">Termos de Uso</a> e a <a href="#">Política de Privacidade</a>.</label>
+<p class="form-message" role="alert">
+</p>
+<button class="submit" type="submit">Criar minha conta <i data-lucide="arrow-right">
+</i>
+</button>
+<p class="switch">Já possui uma conta? <a href="login.html">Fazer login</a>
+</p>
+</form>
+</section>
+<aside class="auth-visual">
+<img src="../assets/linhares-rio-doce.jpg" alt="Vista do Rio Doce em Linhares">
+<div class="visual-shade">
+</div>
+<div class="place">
+<i data-lucide="map-pin">
+</i>
+<span>
+<small>Feito por gente daqui</small>Linhares · Espírito Santo</span>
+</div>
+<blockquote>“Sua conta, <em>sua vitrine</em>,<br>feita para valorizar<br>quem faz arte com as mãos.”</blockquote>
+<p>Cada peça carrega a força da nossa gente.</p>
+</aside>
+</main>
+<section class="benefits">
+<div>
+<i data-lucide="shield-check">
+</i>
+<span>
+<b>Cadastro seguro</b>
+<small>Seus dados protegidos</small>
+</span>
+</div>
+<div>
+<i data-lucide="sparkles">
+</i>
+<span>
+<b>Comece gratuitamente</b>
+<small>Publique sua primeira peça</small>
+</span>
+</div>
+<div>
+<i data-lucide="messages-square">
+</i>
+<span>
+<b>Venda diretamente</b>
+<small>Converse com seus clientes</small>
+</span>
+</div>
+</section>
+</body>
+</html>
+

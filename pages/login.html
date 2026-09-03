@@ -1,180 +1,123 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arte Nossas — Entrar ou criar conta</title>
-  <link rel="stylesheet" href="../css/style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Entre na Arte Nossa, a vitrine compartilhada de artesãos do Espírito Santo.">
+<title>Entrar — Arte Nossa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/auth.css"><link rel="stylesheet" href="../css/branding.css">
+<script src="https://unpkg.com/lucide@latest" defer>
+</script>
+<script src="../js/auth.js" defer>
+</script>
 </head>
 <body>
-
-  <!-- ===== CABEÇALHO ===== -->
-  <header class="topbar">
-    <a href="../index.html" class="brand">
-      <span class="brand-icon">🌿</span>
-      <span class="brand-text">
-        <strong>arte<br>nossas</strong>
-        <small>vitrine compartilhada de artesãos</small>
-      </span>
-    </a>
-
-    <nav class="main-nav">
-      <a href="vitrine.html">Vitrine Coletiva</a>
-      <a href="vitrine.html#artesaos">Artesãos</a>
-      <a href="vitrine.html#como-funciona">Como funciona</a>
-    </nav>
-
-    <div class="topbar-actions">
-      <a href="login.html" class="action-link">👤 Entrar</a>
-      <a href="vitrine.html" class="action-link cart">
-        🛒 Vitrine
-      </a>
-    </div>
-  </header>
-
-  <!-- ===== ÁREA DE LOGIN / CADASTRO ===== -->
-  <main class="auth-wrapper">
-
-    <!-- Ilustração lateral esquerda -->
-    <img class="side-art" src="../assets/left-scene.svg" alt="Prateleira com macramê, vaso de cerâmica e plantas" aria-hidden="true">
-
-    <!-- Coluna de login -->
-    <section class="auth-card">
-      <div class="auth-icon">👤</div>
-      <h1>Bem-vindo de volta!</h1>
-      <p class="subtitle">Faça login para acessar seu painel de artesão</p>
-
-      <form class="auth-form" id="login-form">
-        <label for="login-email">E-mail ou nome de usuário</label>
-        <div class="input-group">
-          <input type="text" id="login-email" placeholder="seu@email.com" required>
-          <span class="input-icon">✉️</span>
-        </div>
-
-        <label for="login-senha">Senha</label>
-        <div class="input-group">
-          <input type="password" id="login-senha" placeholder="••••••••" required>
-          <span class="input-icon">🔒</span>
-        </div>
-
-        <div class="form-row">
-          <label class="checkbox">
-            <input type="checkbox" checked>
-            Lembrar de mim
-          </label>
-          <a href="#" class="link-muted">Esqueceu sua senha?</a>
-        </div>
-
-        <button type="submit" class="btn-primary">Entrar no Painel</button>
-
-        <div class="divider"><span>ou</span></div>
-
-        <button type="button" class="btn-google" onclick="window.location.href='dashboard.html'">
-          <span class="google-g">G</span> Entrar com Google
-        </button>
-
-        <p class="switch-text">
-          Ainda não tem uma conta?
-          <a href="#" class="link-accent" data-switch>Criar conta de artesão</a>
-        </p>
-      </form>
-    </section>
-
-    <!-- Coluna de cadastro -->
-    <section class="auth-card">
-      <div class="auth-icon">👤➕</div>
-      <h1>Crie sua conta de artesão</h1>
-      <p class="subtitle">Junte-se à vitrine compartilhada de artesãos</p>
-
-      <form class="auth-form" id="register-form">
-        <label for="reg-nome">Nome completo</label>
-        <div class="input-group">
-          <input type="text" id="reg-nome" placeholder="Seu nome completo" required>
-          <span class="input-icon">👤</span>
-        </div>
-
-        <label for="reg-email">E-mail</label>
-        <div class="input-group">
-          <input type="email" id="reg-email" placeholder="seu@email.com" required>
-          <span class="input-icon">✉️</span>
-        </div>
-
-        <label for="reg-user">Nome de usuário</label>
-        <div class="input-group">
-          <input type="text" id="reg-user" placeholder="@seuduusuario" required>
-          <span class="input-icon">@</span>
-        </div>
-
-        <label for="reg-senha">Senha</label>
-        <div class="input-group">
-          <input type="password" id="reg-senha" placeholder="••••••••" required>
-          <span class="input-icon">🔒</span>
-        </div>
-
-        <label for="reg-senha2">Confirmar senha</label>
-        <div class="input-group">
-          <input type="password" id="reg-senha2" placeholder="••••••••" required>
-          <span class="input-icon">🔒</span>
-        </div>
-
-        <label class="checkbox">
-          <input type="checkbox" required>
-          Li e concordo com os <a href="#" class="link-accent">Termos de Uso</a> e
-          <a href="#" class="link-accent">Política de Privacidade</a>
-        </label>
-
-        <button type="submit" class="btn-primary">Criar conta e acessar Painel</button>
-
-        <p class="switch-text">
-          Já tem uma conta?
-          <a href="#" class="link-accent" data-switch>Fazer login</a>
-        </p>
-      </form>
-    </section>
-
-    <!-- Ilustração lateral direita -->
-    <img class="side-art" src="../assets/right-scene.svg" alt="Prateleira com vasos de cerâmica pintada e folhagens" aria-hidden="true">
-  </main>
-
-  <!-- ===== FAIXA DE BENEFÍCIOS ===== -->
-  <section class="benefits">
-    <div class="benefit">
-      <span class="benefit-icon">🛡️</span>
-      <div>
-        <strong>Compra segura</strong>
-        <p>Seus dados e pagamentos protegidos.</p>
-      </div>
-    </div>
-    <div class="benefit">
-      <span class="benefit-icon">🚚</span>
-      <div>
-        <strong>Entrega para todo o Brasil</strong>
-        <p>Receba no conforto da sua casa.</p>
-      </div>
-    </div>
-    <div class="benefit">
-      <span class="benefit-icon">💚</span>
-      <div>
-        <strong>Apoie o artesão local</strong>
-        <p>Valorize o trabalho e a economia da sua região.</p>
-      </div>
-    </div>
-    <div class="benefit">
-      <span class="benefit-icon">💬</span>
-      <div>
-        <strong>Suporte dedicado</strong>
-        <p>Estamos aqui para te ajudar sempre.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== RODAPÉ ===== -->
-  <footer class="site-footer">
-    <div class="footer-bottom">
-      © 2024 Arte Nossas. Todos os direitos reservados.
-    </div>
-  </footer>
-
-  <script src="../js/script.js"></script>
+<header>
+<a class="brand brand-image" href="../index.html"><img src="../assets/branding/logo_header.png" alt="Artes Nossas">
+<span>⌁</span>
+<div>
+<strong>arte nossa</strong>
+<small>feito no Espírito Santo</small>
+</div>
+</a>
+<nav>
+<a href="../index.html">Início</a>
+<a href="../index.html#artesaos">Artesãos</a>
+<a href="../index.html#vitrine">Coleções</a>
+<a href="../index.html#historia">Sobre nós</a>
+</nav>
+<a class="header-btn" href="cadastro.html">Criar conta</a>
+</header>
+<main class="auth-shell">
+<section class="auth-content">
+<a class="back" href="../index.html">
+<i data-lucide="arrow-left">
+</i> Voltar à vitrine</a>
+<p class="eyebrow">Área do artesão</p>
+<h1>Bem-vindo<br>
+<em>de volta.</em>
+</h1>
+<p class="subtitle">Acesse sua conta para cuidar da sua vitrine, pedidos e histórias.</p>
+<form id="login-form" novalidate>
+<label>E-mail ou nome de usuário<div class="field">
+<i data-lucide="mail">
+</i>
+<input id="login-email" autocomplete="username" required placeholder="seu@email.com">
+</div>
+</label>
+<label>Senha<div class="field">
+<i data-lucide="lock-keyhole">
+</i>
+<input id="login-senha" type="password" autocomplete="current-password" required minlength="6" placeholder="Sua senha">
+<button class="toggle-password" type="button" aria-label="Mostrar senha">
+<i data-lucide="eye">
+</i>
+</button>
+</div>
+</label>
+<div class="form-row">
+<label class="check">
+<input type="checkbox" checked> Lembrar de mim</label>
+<a href="#" id="forgot">Esqueceu sua senha?</a>
+</div>
+<div class="demo-access"><div><i data-lucide="key-round"></i><span><b>Acesso de demonstra&ccedil;&atilde;o</b><small>artesao@artenossa.com &middot; senha 123456</small></span></div><button type="button" id="use-demo">Usar acesso</button></div><p class="form-message" role="alert">
+</p>
+<button class="submit" type="submit">Entrar na minha conta <i data-lucide="arrow-right">
+</i>
+</button>
+<div class="divider">
+<span>ou continue com</span>
+</div>
+<button class="google" type="button">
+<b>G</b> Google</button>
+<p class="switch">Ainda não faz parte? <a href="cadastro.html">Crie sua conta</a>
+</p>
+</form>
+</section>
+<aside class="auth-visual">
+<img src="../assets/linhares-rio-doce.jpg" alt="Vista do Rio Doce em Linhares">
+<div class="visual-shade">
+</div>
+<div class="place">
+<i data-lucide="map-pin">
+</i>
+<span>
+<small>Nossa origem</small>Linhares · Espírito Santo</span>
+</div>
+<blockquote>“De Linhares para o mundo,<br>arte que nasce aqui,<br>
+<em>histórias que ficam.</em>”</blockquote>
+<p>Fortalecendo nossa cultura, nossa gente e nossa cidade.</p>
+</aside>
+</main>
+<section class="benefits">
+<div>
+<i data-lucide="shield-check">
+</i>
+<span>
+<b>Ambiente seguro</b>
+<small>Seus dados protegidos</small>
+</span>
+</div>
+<div>
+<i data-lucide="store">
+</i>
+<span>
+<b>Sua própria vitrine</b>
+<small>Produtos e pedidos em um só lugar</small>
+</span>
+</div>
+<div>
+<i data-lucide="heart-handshake">
+</i>
+<span>
+<b>Apoio ao artesão local</b>
+<small>Valor para quem cria no ES</small>
+</span>
+</div>
+</section>
 </body>
 </html>
+

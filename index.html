@@ -1,233 +1,61 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>arte nossas — Vitrine Virtual Coletiva de Artesãos Locais</title>
-  <link rel="stylesheet" href="css/vitrine.css">
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Vitrine de artesanato capixaba autoral, feito à mão e vendido por quem cria.">
+  <title>Arte Nossa — feito à mão no Espírito Santo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/vitrine.css"><link rel="stylesheet" href="css/branding.css"><script src="https://unpkg.com/lucide@latest" defer></script><script src="js/vitrine.js" defer></script>
 </head>
 <body>
-
-  <!-- Top Navbar -->
-  <header class="topbar">
-    <a href="index.html" class="brand">
-      <div class="brand-icon">🌿</div>
-      <div class="brand-text">
-        <strong>arte nossas</strong>
-        <small>vitrine coletiva de artesãos</small>
-      </div>
-    </a>
-
-    <nav class="nav-links">
-      <a href="index.html" class="active">Vitrine Coletiva</a>
-      <a href="#artesaos">Nossos Artesãos</a>
-      <a href="#como-funciona">Como Funciona</a>
-    </nav>
-
-    <div class="topbar-actions">
-      <a href="pages/login.html" class="btn-header-login">⚙️ Área do Artesão</a>
-      <button class="cart-button" onclick="alert('Seu carrinho possui 1 produto de Maria Artesã.')">
-        🛒 Carrinho <span class="cart-count">1</span>
-      </button>
-    </div>
-  </header>
-
-  <!-- Hero Section -->
-  <section class="hero-banner">
-    <h1>Peças artesanais únicas com a alma da nossa terra</h1>
-    <p>Conectamos mais de 50 artesãos locais diretamente a você. Compre peças feitas à mão com amor e fortaleça nossa comunidade.</p>
-    
-    <div class="search-bar-hero">
-      <input type="text" id="search-hero" placeholder="Busque por produto, técnica (cerâmica, macramê) ou artesão...">
-      <button onclick="alert('Buscando produtos...')">Buscar</button>
-    </div>
-  </section>
-
-  <!-- Main Container -->
-  <main class="container">
-    
-    <!-- Section Header & Filter Pills -->
-    <div class="section-header">
-      <h2 class="section-title">Vitrine Coletiva de Produtos</h2>
-      <span style="color: var(--text-muted); font-size: 0.9rem;">Exibindo 6 de 50 produtos cadastrados</span>
-    </div>
-
-    <div class="filters-row">
-      <button class="filter-pill active">Todas as peças</button>
-      <button class="filter-pill">⚡ Pronta Entrega</button>
-      <button class="filter-pill">🎨 Sob Encomenda</button>
-      <button class="filter-pill">🏺 Cerâmica</button>
-      <button class="filter-pill">🧶 Macramê</button>
-      <button class="filter-pill">🪵 Madeira</button>
-      <button class="filter-pill">👜 Fibras Natural & Palha</button>
-    </div>
-
-    <!-- Products Grid -->
-    <div class="products-grid">
-      
-      <!-- Product 1 -->
-      <div class="product-card">
-        <div class="product-img-wrapper">
-          <span class="badge-production-type badge-pronta-entrega">⚡ Pronta Entrega</span>
-          <img src="assets/caneca.png" class="product-img" alt="Caneca Cerâmica">
-        </div>
-        <div class="product-body">
-          <div class="artisan-store-name">🏺 Maria Artesã • Linhares/ES</div>
-          <h3 class="product-title">Caneca Cerâmica Artesanal</h3>
-          <div class="product-price-row">
-            <span class="product-price">R$ 64,90</span>
-            <a href="https://wa.me/5527999999999?text=Olá%20Maria!%20Tenho%20interesse%20na%20Caneca%20Cerâmica" target="_blank" class="btn-buy-wsp">
-              💬 WhatsApp
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Product 2 -->
-      <div class="product-card">
-        <div class="product-img-wrapper">
-          <span class="badge-production-type badge-pronta-entrega">⚡ Pronta Entrega</span>
-          <img src="assets/cesto.png" class="product-img" alt="Cesto de Fibra">
-        </div>
-        <div class="product-body">
-          <div class="artisan-store-name">🧺 Ateliê Raízes • Vitória/ES</div>
-          <h3 class="product-title">Cesto de Fibra Natural Trançada</h3>
-          <div class="product-price-row">
-            <span class="product-price">R$ 89,90</span>
-            <a href="https://wa.me/5527999999999?text=Olá!%20Tenho%20interesse%20no%20Cesto%20de%20Fibra" target="_blank" class="btn-buy-wsp">
-              💬 WhatsApp
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Product 3 -->
-      <div class="product-card">
-        <div class="product-img-wrapper">
-          <span class="badge-production-type badge-sob-encomenda">🎨 Sob Encomenda (5 dias)</span>
-          <img src="assets/colar.png" class="product-img" alt="Colar de Madeira">
-        </div>
-        <div class="product-body">
-          <div class="artisan-store-name">🪵 BioJoias Capixabas • Serra/ES</div>
-          <h3 class="product-title">Colar de Madeira Entalhado à Mão</h3>
-          <div class="product-price-row">
-            <span class="product-price">R$ 49,90</span>
-            <a href="https://wa.me/5527999999999?text=Olá!%20Tenho%20interesse%20no%20Colar%20de%20Madeira" target="_blank" class="btn-buy-wsp">
-              💬 WhatsApp
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Product 4 -->
-      <div class="product-card">
-        <div class="product-img-wrapper">
-          <span class="badge-production-type badge-pronta-entrega">⚡ Pronta Entrega</span>
-          <img src="assets/macrame.png" class="product-img" alt="Painel Macramê">
-        </div>
-        <div class="product-body">
-          <div class="artisan-store-name">🧶 Fios de Afeto • Linhares/ES</div>
-          <h3 class="product-title">Painel de Macramê Algodão Cru</h3>
-          <div class="product-price-row">
-            <span class="product-price">R$ 129,90</span>
-            <a href="https://wa.me/5527999999999?text=Olá!%20Tenho%20interesse%20no%20Painel%20de%20Macramê" target="_blank" class="btn-buy-wsp">
-              💬 WhatsApp
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Product 5 -->
-      <div class="product-card">
-        <div class="product-img-wrapper">
-          <span class="badge-production-type badge-sob-encomenda">🎨 Sob Encomenda (3 dias)</span>
-          <img src="assets/bolsa.png" class="product-img" alt="Bolsa de Palha">
-        </div>
-        <div class="product-body">
-          <div class="artisan-store-name">👜 Trançados do Sul • Anchieta/ES</div>
-          <h3 class="product-title">Bolsa de Palha de Milho Trançada</h3>
-          <div class="product-price-row">
-            <span class="product-price">R$ 79,90</span>
-            <a href="https://wa.me/5527999999999?text=Olá!%20Tenho%20interesse%20na%20Bolsa%20de%20Palha" target="_blank" class="btn-buy-wsp">
-              💬 WhatsApp
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Product 6 -->
-      <div class="product-card">
-        <div class="product-img-wrapper">
-          <span class="badge-production-type badge-pronta-entrega">⚡ Pronta Entrega</span>
-          <img src="assets/banner.png" class="product-img" alt="Vases Terracota">
-        </div>
-        <div class="product-body">
-          <div class="artisan-store-name">🏺 Maria Artesã • Linhares/ES</div>
-          <h3 class="product-title">Conjunto Vasos Terracota</h3>
-          <div class="product-price-row">
-            <span class="product-price">R$ 190,00</span>
-            <a href="https://wa.me/5527999999999?text=Olá%20Maria!%20Tenho%20interesse%20no%20Conjunto%20Terracota" target="_blank" class="btn-buy-wsp">
-              💬 WhatsApp
-            </a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Artisans Directory Section -->
-    <section id="artesaos" style="margin-top: 60px;">
-      <div class="section-header">
-        <h2 class="section-title">Conheça Nossos Artesãos Locais</h2>
-      </div>
-
-      <div class="artisans-grid">
-        <div class="artisan-card">
-          <img src="assets/maria.png" class="artisan-avatar" alt="Maria Artesã">
-          <div class="artisan-info">
-            <h4>Maria Artesã</h4>
-            <span>📍 Linhares - ES • Cerâmica</span>
-            <p>"Faço cerâmica manual há 12 anos. Cada vaso carrega amor e o barro da nossa terra."</p>
-          </div>
-        </div>
-
-        <div class="artisan-card">
-          <img src="assets/cesto.png" class="artisan-avatar" alt="Ateliê Raízes">
-          <div class="artisan-info">
-            <h4>Seu Antônio (Ateliê Raízes)</h4>
-            <span>📍 Vitória - ES • Fibras & Cestaria</span>
-            <p>"Aprendi a trançar fibras naturais com meus pais. Crio cestos utilitários e decorativos."</p>
-          </div>
-        </div>
-
-        <div class="artisan-card">
-          <img src="assets/macrame.png" class="artisan-avatar" alt="Fios de Afeto">
-          <div class="artisan-info">
-            <h4>Clara Mendonça (Fios de Afeto)</h4>
-            <span>📍 Linhares - ES • Macramê</span>
-            <p>"Arte em nós de algodão cru para trazer aconchego e estilo boho para os lares."</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- MVP Info Banner for Academic / Project context -->
-    <div class="mvp-banner-info" id="como-funciona">
-      <div class="mvp-banner-icon">💡</div>
-      <div>
-        <h3 style="font-size: 1.1rem; margin-bottom: 4px;">Solução MVP para os 50 Artesãos Locais</h3>
-        <p style="font-size: 0.88rem; color: var(--text-muted);">
-          Para atender artesãos com baixo conhecimento técnico e ritmos de produção variados, esta vitrine permite venda direta simplificada via <strong>WhatsApp</strong>, distinção clara de prazos entre <strong>Pronta Entrega</strong> e <strong>Sob Encomenda</strong>, e gerenciamento descomplicado pelo <a href="pages/dashboard.html" style="color: var(--primary); font-weight:600;">Painel do Artesão</a>.
-        </p>
-      </div>
-    </div>
-
-  </main>
-
-  <footer class="site-footer">
-    <p>© 2024 arte nossas — Vitrine Coletiva de Artesãos Locais. Todos os direitos reservados.</p>
-  </footer>
-
-</body>
-</html>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<div class="notice"><span>Do litoral às montanhas</span><b>Compre direto de quem faz no Espírito Santo</b><span>Feito à mão, feito aqui</span></div>
+<header class="topbar">
+  <a class="brand brand-image" href="index.html"><img src="assets/branding/logo_header.png" alt="Artes Nossas"></a>
+  <button class="menu" aria-label="Abrir menu" aria-expanded="false"><i data-lucide="menu"></i></button>
+  <nav><a href="#vitrine">Descobrir</a><a href="#artesaos">Quem faz</a><a href="#historia">Nossa terra</a></nav>
+  <div class="actions"><a class="cart-link" href="pages/checkout.html"><i data-lucide="shopping-bag"></i> Carrinho <b id="cart-count">0</b></a><a href="pages/login.html"><i data-lucide="circle-user-round"></i> Área do artesão</a><a class="primary" href="#vitrine">Explorar peças <i data-lucide="arrow-down-right"></i></a></div>
+</header>
+<main id="conteudo">
+<section class="hero">
+  <div class="hero-copy"><p class="eyebrow">Artesanato contemporâneo · Espírito Santo</p><h1>O Espírito Santo<br><em>feito à mão.</em></h1><p class="lead">Design com sotaque capixaba. Peças únicas que carregam a matéria, a memória e o jeito de viver da nossa terra.</p>
+    <div class="hero-ctas"><a class="hero-main-cta" href="#vitrine">Descobrir a coleção <i data-lucide="arrow-down-right"></i></a><a class="hero-link" href="#artesaos">Conheça quem faz <i data-lucide="arrow-right"></i></a></div>
+    <form class="search" id="search-form"><i data-lucide="search"></i><input id="search-input" type="search" placeholder="Busque cerâmica, fibras, biojoias..." aria-label="Buscar produtos"><button>Buscar</button></form>
+    <div class="stats"><p><i data-lucide="sprout"></i><span><strong>50+</strong><small>criadores locais</small></span></p><p><i data-lucide="hand-heart"></i><span><strong>100%</strong><small>feito no ES</small></span></p><p><i data-lucide="shopping-bag"></i><span><strong>01 a 01</strong><small>compra direta</small></span></p></div><div class="botanical" aria-hidden="true"><span></span><span></span><span></span></div>
+  </div>
+  <div class="hero-visual"><span class="hero-watermark" aria-hidden="true">ES</span><div class="arch"><img src="assets/banner.png" alt="Cerâmicas artesanais em tons terrosos"></div><div class="image-caption"><span>01</span><p><small>Matéria da vez</small>Barro, fogo e tradição</p></div><div class="pin"><i data-lucide="map-pin"></i><span><small>Origem</small>Espírito Santo · Brasil</span></div><div class="hero-seal" aria-hidden="true"><span>FEITO<br>NO ES</span></div></div>
+</section>
+<div class="ticker">Panela de barro　✦　Congo　✦　Biojoias　✦　Fibras naturais　✦　Cerâmica autoral　✦　Economia criativa　✦</div>
+<section class="collection wrap" id="vitrine">
+  <div class="heading"><div><p class="eyebrow">Escolhas da semana</p><h2>Feito devagar.<br><em>Escolhido com intenção.</em></h2></div><p>Objetos únicos, produzidos em pequena escala por mãos capixabas.</p></div>
+  <div class="filters"><button class="active" data-filter="todos">Todos</button><button data-filter="pronta">Pronta entrega</button><button data-filter="ceramica">Cerâmica</button><button data-filter="fibras">Fibras</button><button data-filter="madeira">Madeira</button><button data-filter="macrame">Macramê</button></div>
+  <p id="count" class="count">6 peças encontradas</p><div class="grid" id="grid">
+    <article class="product" data-search="pronta ceramica caneca mare maria linhares"><a class="photo" href="https://wa.me/5527999999999?text=Olá!%20Tenho%20interesse%20na%20Caneca%20Maré" target="_blank"><span class="num">01</span><span class="badge">Pronta entrega</span><img src="assets/caneca.png" alt="Caneca artesanal"><span class="peek">Ver peça ↗</span></a><div class="info"><p>Cerâmica <span>Linhares — ES</span></p><h3>Caneca Maré</h3><small>Maria Artesã</small><footer><strong>R$ 64,90</strong><i data-lucide="message-circle"></i></footer></div></article>
+    <article class="product" data-search="pronta fibras cesto raiz antonio souza vitoria"><a class="photo" href="#"><span class="num">02</span><span class="badge">Pronta entrega</span><img src="assets/cesto.png" alt="Cesto de fibra natural"><span class="peek">Adicionar ↗</span></a><div class="info"><p>Fibras <span>Vitória — ES</span></p><h3>Cesto Raiz</h3><small>Antônio Souza</small><footer><strong>R$ 89,90</strong><i data-lucide="shopping-bag"></i></footer></div></article>
+    <article class="product" data-search="madeira colar mata luana alves serra encomenda"><a class="photo" href="#"><span class="num">03</span><span class="badge order">Sob encomenda</span><img src="assets/colar.png" alt="Colar de madeira"><span class="peek">Adicionar ↗</span></a><div class="info"><p>Biojoia <span>Serra — ES</span></p><h3>Colar Mata</h3><small>Luana Alves</small><footer><strong>R$ 49,90</strong><i data-lucide="shopping-bag"></i></footer></div></article>
+    <article class="product" data-search="macrame painel restinga clara mendonca linhares encomenda"><a class="photo" href="#"><span class="num">04</span><span class="badge order">Sob encomenda</span><img src="assets/macrame.png" alt="Painel de macramê"><span class="peek">Adicionar ↗</span></a><div class="info"><p>Macramê <span>Linhares — ES</span></p><h3>Painel Restinga</h3><small>Clara Mendonça</small><footer><strong>R$ 129,90</strong><i data-lucide="shopping-bag"></i></footer></div></article>
+    <article class="product" data-search="fibras bolsa iriri palha joana ribeiro anchieta encomenda"><a class="photo" href="#"><span class="num">05</span><span class="badge order">Sob encomenda</span><img src="assets/bolsa.png" alt="Bolsa de palha"><span class="peek">Adicionar ↗</span></a><div class="info"><p>Fibras <span>Anchieta — ES</span></p><h3>Bolsa Iriri</h3><small>Joana Ribeiro</small><footer><strong>R$ 79,90</strong><i data-lucide="shopping-bag"></i></footer></div></article>
+    <article class="product" data-search="pronta ceramica vasos colecao terra maria linhares"><a class="photo" href="#"><span class="num">06</span><span class="badge">Pronta entrega</span><img src="assets/banner.png" alt="Vasos de terracota"><span class="peek">Adicionar ↗</span></a><div class="info"><p>Cerâmica <span>Linhares — ES</span></p><h3>Coleção Terra</h3><small>Maria Ferreira</small><footer><strong>R$ 190,00</strong><i data-lucide="shopping-bag"></i></footer></div></article>
+    <article class="product" data-search="pronta ceramica panela moqueca celia vitoria"><a class="photo" href="#"><span class="num">07</span><span class="badge">Pronta entrega</span><img src="assets/panela-moqueca.png" alt="Panela de barro"><span class="peek">Adicionar ↗</span></a><div class="info"><p>Cerâmica <span>Vitória — ES</span></p><h3>Panela Moqueca</h3><small>Célia Santos</small><footer><strong>R$ 148,00</strong><i data-lucide="shopping-bag"></i></footer></div></article>
+    <article class="product" data-search="fibras balaio cafe domingos alegre"><a class="photo" href="#"><span class="num">08</span><span class="badge order">Sob encomenda</span><img src="assets/balaio-cafe.png" alt="Balaio com café"><span class="peek">Adicionar ↗</span></a><div class="info"><p>Fibras <span>Alegre — ES</span></p><h3>Balaio do Café</h3><small>Domingos Rocha</small><footer><strong>R$ 112,00</strong><i data-lucide="shopping-bag"></i></footer></div></article>
+    <article class="product" data-search="pronta madeira tabua pedra azul lucas domingos martins"><a class="photo" href="#"><span class="num">09</span><span class="badge">Pronta entrega</span><img src="assets/tabua-madeira.png" alt="Tábua de madeira"><span class="peek">Adicionar ↗</span></a><div class="info"><p>Madeira <span>Domingos Martins — ES</span></p><h3>Tábua Pedra Azul</h3><small>Lucas Nascimento</small><footer><strong>R$ 136,00</strong><i data-lucide="shopping-bag"></i></footer></div></article>
+    <article class="product" data-search="madeira brincos sementes luana serra"><a class="photo" href="#"><span class="num">10</span><span class="badge">Pronta entrega</span><img src="assets/brincos-sementes.png" alt="Brincos de sementes"><span class="peek">Adicionar ↗</span></a><div class="info"><p>Biojoia <span>Serra — ES</span></p><h3>Brincos Floresta</h3><small>Luana Alves</small><footer><strong>R$ 58,00</strong><i data-lucide="shopping-bag"></i></footer></div></article>
+    <article class="product" data-search="tecido caminho mesa elisa colatina"><a class="photo" href="#"><span class="num">11</span><span class="badge order">Sob encomenda</span><img src="assets/caminho-mesa.png" alt="Caminho de mesa"><span class="peek">Adicionar ↗</span></a><div class="info"><p>Tecelagem <span>Colatina — ES</span></p><h3>Caminho Areia</h3><small>Elisa Moreira</small><footer><strong>R$ 124,00</strong><i data-lucide="shopping-bag"></i></footer></div></article>
+    <article class="product" data-search="fibras luminaria palha roberto vila velha"><a class="photo" href="#"><span class="num">12</span><span class="badge order">Sob encomenda</span><img src="assets/luminaria-palha.png" alt="Luminária de palha"><span class="peek">Adicionar ↗</span></a><div class="info"><p>Fibras <span>Vila Velha — ES</span></p><h3>Luminária Sol</h3><small>Roberto Lima</small><footer><strong>R$ 249,00</strong><i data-lucide="shopping-bag"></i></footer></div></article>
+    <article class="product" data-search="ceramica tambor congo tiago cariacica"><a class="photo" href="#"><span class="num">13</span><span class="badge">Pronta entrega</span><img src="assets/tambor-congo.png" alt="Escultura Tambor de Congo"><span class="peek">Adicionar ↗</span></a><div class="info"><p>Escultura <span>Cariacica — ES</span></p><h3>Tambor de Congo</h3><small>Tiago Oliveira</small><footer><strong>R$ 96,00</strong><i data-lucide="shopping-bag"></i></footer></div></article>
+    <article class="product" data-search="ceramica prato mar verde ana guarapari"><a class="photo" href="#"><span class="num">14</span><span class="badge">Pronta entrega</span><img src="assets/prato-ceramica.png" alt="Prato decorativo"><span class="peek">Adicionar ↗</span></a><div class="info"><p>Cerâmica <span>Guarapari — ES</span></p><h3>Prato Mar Verde</h3><small>Ana Beatriz Costa</small><footer><strong>R$ 84,00</strong><i data-lucide="shopping-bag"></i></footer></div></article>
+    <article class="product" data-search="fibras bolsa croche joana anchieta"><a class="photo" href="#"><span class="num">15</span><span class="badge order">Sob encomenda</span><img src="assets/bolsa-croche.png" alt="Bolsa de crochê"><span class="peek">Adicionar ↗</span></a><div class="info"><p>Crochê <span>Anchieta — ES</span></p><h3>Bolsa Falésia</h3><small>Joana Ribeiro</small><footer><strong>R$ 159,00</strong><i data-lucide="shopping-bag"></i></footer></div></article>
+    <article class="product" data-search="ceramica vaso montanha paulo venda nova"><a class="photo" href="#"><span class="num">16</span><span class="badge">Pronta entrega</span><img src="assets/vaso-montanha.png" alt="Vaso Montanhas"><span class="peek">Adicionar ↗</span></a><div class="info"><p>Cerâmica <span>Venda Nova — ES</span></p><h3>Vaso Montanhas</h3><small>Paulo Henrique Luz</small><footer><strong>R$ 178,00</strong><i data-lucide="shopping-bag"></i></footer></div></article>
+  </div><div id="empty" class="empty" hidden><i data-lucide="search-x"></i><h3>Nenhuma peça por aqui</h3><p>Tente outro termo ou categoria.</p></div>
+</section>
+<section class="story" id="historia"><div class="story-img"><img src="assets/maria.png" alt="Artesã capixaba em seu ateliê"><b>Quem faz<br>faz história.</b></div><div class="story-copy"><p class="eyebrow">Saberes entre gerações</p><h2>Nosso sotaque<br>também mora<br><em>nas mãos.</em></h2><p>Em cada peça há um pedaço do Espírito Santo: o barro moldado, o trançado paciente, a madeira que ganha forma. A Arte Nossa aproxima você dessas histórias e mantém o valor com quem cria.</p><a href="#artesaos">Conheça quem faz　→</a></div></section>
+<section class="makers wrap" id="artesaos"><div class="heading"><div><p class="eyebrow">Gente da nossa terra</p><h2>As mãos por trás<br><em>de cada história.</em></h2></div><p>Produção local e conversa direta. Sem atravessadores.</p></div><div class="maker-grid">
+  <article><img src="assets/maria.png" alt="Maria Artesã"><p>Cerâmica · Linhares</p><h3>Maria Artesã</h3><blockquote>“Cada vaso carrega o tempo, o cuidado e o barro da nossa terra.”</blockquote></article>
+  <article><img src="assets/cesto.png" alt="Antônio Souza"><p>Cestaria · Vitória</p><h3>Antônio Souza</h3><blockquote>“Trançar fibras é continuar uma memória que começou antes de mim.”</blockquote></article>
+  <article><img src="assets/macrame.png" alt="Clara Mendonça"><p>Macramê · Linhares</p><h3>Clara Mendonça</h3><blockquote>“Cada nó é encontro entre a calma, a matéria e a casa.”</blockquote></article>
+</div></section>
+<section class="join"><div><p class="eyebrow">Você também cria?</p><h2>Sua arte merece<br><em>ser descoberta.</em></h2></div><div><p>Tenha sua vitrine, organize encomendas e venda direto pelo WhatsApp. Simples, próximo e do seu jeito.</p><a href="pages/cadastro.html">Quero fazer parte　↗</a></div></section>
+</main>
+<footer class="site-footer"><div><img class="footer-logo-img" src="assets/branding/logo_footer.png" alt="Artes Nossas"><p>Do Espírito Santo para o mundo.</p></div><nav><a href="#vitrine">Vitrine</a><a href="#artesaos">Artesãos</a><a href="pages/login.html">Área do artesão</a></nav><small>© <span id="year">2026</span> Arte Nossa · Feito com afeto no ES</small></footer>
+</body></html>
